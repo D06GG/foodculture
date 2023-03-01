@@ -21,11 +21,11 @@ class UserControllerTest {
     @Test
     void regist() {
         User user = new User();
-        user.setUsername("xianhe");
+        user.setUsername("kido");
         user.setPassword("123");
-        user.setName("咸赫");
+        user.setName("基德");
         user.setPower(0);
-        user.setEmail("1780816534@qq.com");
+        user.setEmail("asd@123.com");
         user.setSubscribe(0);
         //实体化MD5加密工具类
         Md5Utils md5Utils = new Md5Utils();
@@ -44,10 +44,10 @@ class UserControllerTest {
     public void updateUser2(){
         User user = new User();
         user.setId(4);
-        user.setUsername("xianhe");
+        user.setUsername("kido");
         user.setPassword("202cb962ac59075b964b07152d234b70");
-        user.setName("咸赫");
-        user.setEmail("1780816534@qq.com");
+        user.setName("基德");
+        user.setEmail("asd@123.com");
         user.setSubscribe(1);
         user.setPower(0);
         int i = userService.updateUser(user);

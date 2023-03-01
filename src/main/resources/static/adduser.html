@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>食录——注册页面</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <style type="text/css">
+        body{
+            margin:0px;
+            background-image: url(images/background.jpg);
+            background-position: center 0;
+            background-size: cover;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/adduser.js"></script>
+</head>
+<body>
+<div class="page-wrapper flex-row align-items-center">
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-md-4">
+                <div class="card p-0">
+                    <div class="card-header text-center text-uppercase h3 font-weight-bold">
+                        用户注册
+                    </div>
+
+                    <div class="card-body py">
+                        <div class="form-group">
+                            <label class="form-control-label" ><font color="red">*</font>用户名</label>
+                            <input type="text" class="form-control" id="username">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-control-label" ><font color="red">*</font>密码</label>
+                            <input type="password" class="form-control" id="password">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" ><font color="red">*</font>昵称</label>
+                            <input type="text" class="form-control" id="truename">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" ><font color="red">*</font>邮箱</label>
+                            <input type="text" class="form-control" id="email">
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn btn-primary px-5" id="addUserBtn">注册</button></a>
+                            </div>
+                            <div class="col-6">
+                            <button class="btn btn-default px-5" id="goback">返回</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./vendor/jquery/jquery.min.js"></script>
+<script src="./vendor/popper.js/popper.min.js"></script>
+<script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="./vendor/chart.js/chart.min.js"></script>
+<script src="./js/carbon.js"></script>
+<script src="./js/demo.js"></script>
+</body>
+</html>

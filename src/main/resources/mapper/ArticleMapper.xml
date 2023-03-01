@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.wzr.foodculture.dao.ArticleMapper">
+
+    <!--查询收藏数前三的文章-->
+    <select id="selectArticleByCollectnumDesc" resultType="Article">
+        select * from article order by collectnum desc
+    </select>
+    <!--查询最新的三篇文章-->
+    <select id="selectArticleByTimeDesc" resultType="Article">
+        select * from article order by time desc
+    </select>
+    <!--文章收藏数加1-->
+    <update id="collectNumAdd1" parameterType="integer">
+        update article
+        <set>
+            collectnum = collectnum + 1
+        </set>
+        where id=#{id}
+    </update>
+    <update id="collectNumReduce1" parameterType="integer">
+        update article
+        <set>
+            collectnum = collectnum - 1
+        </set>
+        where id=#{id}
+    </update>
+    <!--查询最新文章-->
+    <select id="uptodateArticle" resultType="Article">
+      select * from article where time =(select max(time) from article)
+    </select>
+
+    <!--查询目前文章总数-->
+    <select id="selectArticleNum" resultType="integer">
+        select count(*) from article
+    </select>
+
+    <!--查询所有文章-->
+    <select id="selectAllArticle" resultType="Article">
+        select * from article
+    </select>
+
+    <!--根据作者查询文章-->
+    <select id="selectArticleByAuthor" resultType="Article">
+        select * from article where author = #{author}
+    </select>
+
+    <!--根据ID查询文章-->
+    <select id="selectArticleById" resultType="Article" parameterType="integer">
+        select * from article where id = #{id}
+    </select>
+
+
+    <!--根据标题查询文章-->
+    <select id="selectArticleByTitle" resultType="Article">
+        select * from article where title like concat('%',#{title},'%')
+    </select>
+
+    <!--根据标题或作者或关键词或类型查询文章-->
+    <select id="selectArticleByMany" parameterType="string" resultType="Article">
+        select * from article
+        where title like concat('%',#{text},'%')
+        or author like concat('%',#{text},'%')
+        or tag like concat('%',#{text},'%')
+        or type like concat('%',#{text},'%')
+    </select>
+
+    <!--新增文章-->
+    <insert id="insertArticle" parameterType="Article">
+        insert into article values(null,#{title},#{info},#{author},#{local},#{cover},#{time},0,#{tag},#{type})
+    </insert>
+
+    <!--更改文章信息-->
+    <update id="updateArticle" parameterType="Article">
+        update article
+        <set>
+            title=#{title},
+            info=#{info},
+            author=#{author},
+            local=#{local},
+            cover=#{cover},
+            time=#{time},
+            tag=#{tag},
+            type=#{type}
+        </set>
+        where id=#{id}
+    </update>
+
+    <!--删除文章-->
+    <delete id="deleteArticle" parameterType="integer">
+        delete from article where id=#{id}
+    </delete>
+</mapper>

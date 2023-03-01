@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>管理系统</title>
+    <link rel="stylesheet" href="./vendor/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="./vendor/font-awesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/table.css">
+</head>
+<body>
+<div class="page-wrapper">
+    <nav class="navbar page-header">
+        <a href="#" class="btn btn-link sidebar-mobile-toggle d-md-none mr-auto">
+            <i class="fa fa-bars"></i>
+        </a>
+
+
+        <a href="#" class="btn btn-link sidebar-toggle d-md-down-none">
+            <i class="fa fa-bars"></i>
+        </a>
+
+        <ul class="navbar-nav ml-auto">
+
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="images/avatar-1.png" class="avatar avatar-sm" alt="logo">
+                    <span class="small ml-1 d-md-down-none" id="truename"></span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-header">账户</div>
+
+                    <a href="login.html" class="dropdown-item">
+                        <i class="fa fa-lock"></i> 退出
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-title">导航栏</li>
+
+
+                    <li class="nav-item">
+                        <a href="manage.html" class="nav-link">
+                            主页
+                        </a>
+                    </li>
+
+
+
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            用户 <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item" id="departments">
+                                <a href="usermanage.html" class="nav-link active">
+                                    </i> 用户管理
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item nav-dropdown">
+                        <a href="#" class="nav-link nav-dropdown-toggle">
+                            文章 <i class="fa fa-caret-left"></i>
+                        </a>
+
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a href="articlemanage.html" class="nav-link">
+                                    文章管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="addarticle.html" class="nav-link">
+                                    新增文章
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <div class="container-fluid">
+
+                <div class="row ">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body p-0">
+
+                                <div class="item-box layui-clear" id="list-cont">
+                                    <div style="padding: 10px">
+
+
+                                        <input type="text" value="" name="id" style="display: none" id="userid">
+                                        <input type="text" value="" name="username" style="display: none" id="username">
+                                        <input type="text" value="" name="password" style="display: none" id="userpswd">
+                                        <div class="form-group">
+                                            <label for="departments">用户昵称</label>
+                                            <input class="form-control" type="text" value="" name="name" id="userdename">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="departments">用户邮箱</label>
+                                            <input class="form-control" type="text" value="" name="email" id="useremail">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="departments">订阅状态</label>
+                                            <select name="subscribe" id="usersub">
+                                                <option value ="0">未订阅</option>
+                                                <option value ="1">订阅</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="departments">用户权限</label>
+                                            <select name="power" id="userpower">
+                                                <option value ="0">普通用户</option>
+                                                <option value ="1">管理员</option>
+                                            </select>
+                                        </div>
+
+                                        <button class="btn btn-default" id="submit">提交</button>
+                                        <button class="btn btn-default" id="goback">返回</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./vendor/jquery/jquery.min.js"></script>
+<script src="js/useralter.js"></script>
+<script src="./vendor/popper.js/popper.min.js"></script>
+<script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="./vendor/chart.js/chart.min.js"></script>
+<script src="./js/carbon.js"></script>
+<script src="./js/demo.js"></script>
+</body>
+</html>

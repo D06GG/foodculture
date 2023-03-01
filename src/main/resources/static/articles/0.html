@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Site Metas -->
+    <title>食录——知其味也知其源</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <!-- Design fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet"> 
+    
+    <!-- Bootstrap core CSS -->
+    <link href="../css2/bootstrap.css" rel="stylesheet">
+
+    <!-- FontAwesome Icons core CSS -->
+    <link href="../css2/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../style.css" rel="stylesheet">
+
+    <!-- Animate styles for this template -->
+    <link href="../css2/animate.css" rel="stylesheet">
+
+    <!-- Responsive styles for this template -->
+    <link href="../css2/responsive.css" rel="stylesheet">
+
+    <!-- Colors for this template -->
+    <link href="../css2/colors.css" rel="stylesheet">
+
+    <!-- Version Marketing CSS for this template -->
+    <link href="../css2/version/marketing.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+    <div id="wrapper">
+        <header class="market-header header">
+            <div class="container-fluid">
+                <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="../index2.html"></a>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index2.html">主页</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index2.html">文章</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../collect.html">我的收藏</a>
+                            </li>
+                        </ul>
+                        <div class="form-inline">
+                            <input type="hidden" id="pageNum" value="1">
+                            <input type="hidden" id="pageSize" value="4">
+                            <input class="form-control mr-sm-2" type="text" placeholder="看点什么?" id="searchtext">
+                            <button class="btn btn-outline-success my-2 my-sm-0" id="search">查找</button>
+                        </div>
+                    </div>
+                </nav>
+            </div><!-- end container-fluid -->
+        </header><!-- end market-header -->
+
+        <section class="section lb m3rem">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-wrapper" id="searcharea">
+                            <div class="blog-title-area" id="titlearea">
+                                
+
+
+                                <h3 id="arttitle"></h3>
+                                <!-- <input type="hidden" id="aid" value="5"> -->
+                                <div class="blog-meta big-meta">
+                                    <small><a href="javascript:void(0)" id="arttime"></a></small>
+                                    <small><a href="javascript:void(0)" id="artauthor"></a></small>
+                                    <!-- <small><a href="javascript:void(0)" id="addcollect"><i class="fa fa-eye"></i> 收藏该文章</a></small> -->
+                                </div><!-- end meta -->
+
+                            </div><!-- end title -->
+
+                            <div class="single-post-media">
+                                <img src="../upload/cover_0.jpg" class="img-fluid" id="artcover">
+                            </div><!-- end media -->
+
+                            <div class="blog-content">  
+                                <div class="pp">
+                                    <p>非常抱歉，本文章可能由于以下原因导致无法正常观看。<br>
+                                    </p>
+                                    <p>1.本文章尚未正式发布<br>
+                                    </p>
+                                    <p>2.文章链接失效<br>
+                                    </p>
+                                    <hr>
+                                </div><!-- end pp -->
+                            </div><!-- end content -->
+
+
+
+
+
+                        
+                        </div><!-- end page-wrapper -->
+
+                        <hr class="invis1">
+
+                        <div class="row" id="pagecontrol">
+                            <div class="col-md-12">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item"><a href="javascript:void(0)" class="page-link"
+                                                                 id="curpage"></a></li>
+                                        <li class="page-item"><a href="javascript:void(0)" class="page-link">of</a></li>
+                                        <li class="page-item"><a href="javascript:void(0)" class="page-link" id="pages"></a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="javascript:void(0)" id="prepage">上一页</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="javascript:void(0)" id="nextpage">下一页</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div><!-- end col -->
+                        </div><!-- end row -->
+                    </div><!-- end col -->
+
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sidebar">
+                            <div class="widget-no-style">
+                                <div class="newsletter-widget text-center align-self-center">
+                                    <h3>订阅本站</h3>
+                                    <p>订阅本站每周最热门文章，我们将在每周五晚上20：00左右将其发送至您的邮箱。</p>
+                                    <form class="form-inline" method="post">
+                                        
+                                        <input type="submit" value="订阅" class="btn btn-default btn-block" id="subbtn"/>
+                                    </form>         
+                                </div><!-- end newsletter -->
+                            </div>
+
+                            <div class="widget">
+                                <h2 class="widget-title">最新文章</h2>
+                                <div class="blog-list-widget">
+                                    <div class="list-group" id="newart">
+
+                                    </div>
+                                </div><!-- end blog-list -->
+                            </div><!-- end widget -->
+
+                            <div class="widget">
+                                <h2 class="widget-title">热门文章</h2>
+                                <div class="blog-list-widget">
+                                    <div class="list-group" id="hotart">
+
+                                    </div>
+                                </div><!-- end blog-list -->
+                            </div><!-- end widget -->
+
+
+                            <div class="widget">
+                                <h2 class="widget-title">热门搜索</h2>
+                                <div class="link-widget" id="hottags">
+
+                                </div><!-- end link-widget -->
+                            </div><!-- end widget -->
+
+
+                        </div><!-- end sidebar -->
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+             
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <br>
+                        <br>
+                        <div class="copyright">Copyright &copy; 2021.食录网由天津师范大学2021届学生王志然主管主办</div>
+                    </div>
+                </div>
+            </div><!-- end container -->
+        </footer><!-- end footer -->
+
+        <div class="dmtop">Scroll to Top</div>
+        
+    </div><!-- end wrapper -->
+
+    <!-- Core JavaScript
+    ================================================== -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/searchsingle.js"></script>
+    <script src="../js/subscribe.js"></script>
+    <script src="../js/getNewAndHot.js"></script>
+<!--     <script src="../js/addCollect.js"></script>
+    <script src="../js/getArticile.js"></script> -->
+    <script src="../js/tether.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/animate.js"></script>
+    <script src="../js/custom.js"></script>
+    <script>
+        function searchtag(e) {
+            var text=$(e).text();
+            $("#searchtext").val(text);
+            $("#search").click();
+        }
+    </script>
+
+</body>
+</html>

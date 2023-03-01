@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.wzr.foodculture.dao.CollectMapper">
+
+    <!--查询用户的所有收藏-->
+    <select id="selectCollectByUid" parameterType="integer" resultType="integer">
+        select aid from collect where uid=#{uid}
+    </select>
+
+    <!--查询是否存在收藏,根据uid和aid-->
+    <select id="selectCollectByUidAndAid" parameterType="integer" resultType="integer">
+        select ifnull(id,0) from collect where uid=#{uid} and aid=#{aid}
+    </select>
+
+    <!--新增收藏记录-->
+    <insert id="insertCollect" parameterType="Collect">
+        insert into collect values(null,#{uid},#{aid})
+    </insert>
+    <!--删除收藏记录-->
+    <delete id="deleteCollect" parameterType="integer">
+        delete from collect where uid=#{uid} and aid=#{aid}
+    </delete>
+</mapper>

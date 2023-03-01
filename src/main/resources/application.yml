@@ -1,0 +1,28 @@
+server:
+  port: 8089 #配置端口号
+
+spring:
+  datasource:
+    username: root #配置数据库用户名
+    password: 123456 #配置数据库密码
+    url: jdbc:mysql://localhost:3306/foodculture?useUnicode=true&characterEncoding=UTF-8 #配置数据库地址并且转为UFT-8码
+    driver-class-name: com.mysql.jdbc.Driver #注册JDBC驱动
+  mail:
+    host: smtp.qq.com                  #发送邮件服务器
+    username: 982897333@qq.com         #发送邮件的邮箱地址
+    password:  gebpjtxzgaucbeai       #客户端授权码，不是邮箱密码，这个在qq邮箱设置里面自动生成的
+    properties.mail.smtp.port: 465  #端口号465或587
+    properties.mail.smtp.starttls.enable: true #使用TLS协议
+    properties.mail.smtp.starttls.required: true
+    properties.mail.smtp.ssl.enable: true #使用SSL协议
+    default-encoding: utf-8 #配置默认编码格式
+
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml #配置mapper文件位置
+  type-aliases-package: com.wzr.foodculture.pojo #配置实体类位置
+
+pagehelper:
+  helperDialect: mysql #配置数据库类型
+  reasonable: true #配置分页合理化参数，当该参数为true时，当pageNum<0会查询第一页，当pageNum>最大页数会查询最后一页
+  support-methods-arguments: true  #支持通过Mapper接口来传递分页参数
+  page-size-zero: false #当参数为true时，pageSize=0时会查询全部结果，相当于没有执行分页查询，但返回结果仍然是Page类型

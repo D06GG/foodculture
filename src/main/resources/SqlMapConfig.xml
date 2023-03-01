@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <package name="com.wzr.foodculture.pojo"/>
+    </typeAliases>
+
+    <!--使用JDBC管理事务，配置数据库连接属性-->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/foodculture"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--映射文件地址，通过核心配置文件加载映射文件-->
+    <!--注意：映射文件要放到resources文件夹下面-->
+    <mappers>
+        <mapper resource="mapper/UserMapper.xml"/>
+        <mapper resource="mapper/ArticleMapper.xml"/>
+        <mapper resource="mapper/CollectMapper.xml"/>
+        <mapper resource="mapper/SearchTagMapper.xml"/>
+        <!--<package name="com.neu.mapper"/>-->
+    </mappers>
+
+</configuration>

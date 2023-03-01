@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.wzr.foodculture.dao.UserMapper">
+
+    <!--查询已订阅用户的邮箱-->
+    <select id="selectEmailBySub" resultType="string">
+        select email from user where subscribe = 1
+    </select>
+
+    <!--查询用户数量-->
+    <select id="selectUserNum" resultType="integer">
+        select count(*) from user
+    </select>
+
+    <!--查询用户数量-->
+    <select id="selectSubNum" resultType="integer">
+        select count(*) from user where subscribe = 1
+    </select>
+
+    <!--查询所有用户-->
+    <select id="selectAllUser" resultType="user">
+        select * from user
+    </select>
+
+    <!--根据ID查询用户-->
+    <select id="selectUserById" resultType="user">
+        select * from user where id = #{id}
+    </select>
+
+    <!--根据用户名密码查询用户-->
+    <select id="selectUserByUnameAndPswd" parameterType="User" resultType="user">
+        select * from user where username=#{uname} and password = #{pswd}
+    </select>
+
+    <!--根据昵称查询用户-->
+    <select id="selectUserByName" resultType="user">
+        select * from user where name = #{name}
+    </select>
+
+    <!--新增用户-->
+    <insert id="insertUser" parameterType="User">
+        insert into user values(null,#{username},#{password},#{name},#{email},#{subscribe},#{power})
+    </insert>
+
+    <!--用户订阅-->
+    <update id="subscribe" parameterType="user">
+        update user
+        <set>
+            subscribe=1
+        </set>
+        where id=#{id}
+    </update>
+
+    <!--取消订阅-->
+    <update id="nosubscribe" parameterType="user">
+        update user
+        <set>
+            subscribe=0
+        </set>
+        where id=#{id}
+    </update>
+
+    <!--更改用户信息-->
+    <update id="updateUser" parameterType="user">
+        update user
+        <set>
+            username=#{username},
+            password=#{password},
+            name=#{name},
+            email=#{email},
+            subscribe=#{subscribe},
+            power=#{power}
+        </set>
+        where id=#{id}
+    </update>
+
+    <!--删除用户-->
+    <delete id="deleteUser" parameterType="integer">
+        delete from user where id=#{id}
+    </delete>
+</mapper>

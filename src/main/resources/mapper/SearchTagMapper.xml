@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.wzr.foodculture.dao.SearchTagMapper">
+    <!--查询数据库中是否收录该关键词-->
+    <select id="selectTagByText" resultType="SearchTag">
+        select * from searchtag where text = #{text}
+    </select>
+    <!--创建新关键词-->
+    <insert id="insertSearchTag" parameterType="string">
+        insert into searchtag values(null ,#{text},1)
+    </insert>
+    <!--关键词搜索数+1-->
+    <update id="updateSearchTagAdd1" parameterType="string">
+        update searchtag
+        <set>
+            times = times + 1
+        </set>
+        where text = #{text}
+    </update>
+    <!--根据搜索数降序查询-->
+    <select id="selectTagByTimesDesc" resultType="SearchTag">
+        select * from searchtag order by times desc
+    </select>
+</mapper>
